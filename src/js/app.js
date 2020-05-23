@@ -1,3 +1,5 @@
+import { hiddenParagraph, showParagraphButton } from './dom-loader'
+
 var showParagraph = false;
 
 showParagraphButton.addEventListener('click', toggleHiddenState);
