@@ -1,3 +1,6 @@
+import '../css/main.css';
+import '../css/input-elements.css';
+
 import { hiddenParagraph, showParagraphButton } from './dom-loader'
 
 var showParagraph = false;
