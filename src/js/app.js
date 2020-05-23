@@ -1,31 +1,18 @@
-import '../css/main.css';
-import '../css/input-elements.css';
+import '../css/main.scss';
 
-import { hiddenParagraph, showParagraphButton } from './dom-loader'
+import { RandomGenerator } from './random-generator';
+const outputParagraph = document.querySelector('#outputParagraph');
 
-var showParagraph = false;
+const outputRandomInt = () => {
+    outputParagraph.textContent = RandomGenerator.randomInteger();
+};
 
-showParagraphButton.addEventListener('click', toggleHiddenState);
-updateHiddenParagraph();
+const outputRandomRange = () => {
+    outputParagraph.textContent = RandomGenerator.randomRange(1, 500);
+};
 
-function toggleHiddenState() {
-    showParagraph = !showParagraph;
-    updateHiddenParagraph();
-    updateShowParagraphButton()
-}
+const buttomRndInt = document.querySelector('#randomInt');
+const buttomRndRange = document.querySelector('#randomRange');
 
-function updateShowParagraphButton() {
-    if (showParagraph) {
-      showParagraphButton.textContent = 'Hide the Paragraph';
-    } else {
-      showParagraphButton.textContent = 'Show the Paragraph';
-    }
-}
-
-function updateHiddenParagraph() {
-    if (showParagraph) {
-        hiddenParagraph.style.display = 'block';
-    } else {
-        hiddenParagraph.style.display = 'none';
-    }
-}
+buttomRndInt.addEventListener('click', outputRandomInt);
+buttomRndRange.addEventListener('click', outputRandomRange);
