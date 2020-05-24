@@ -54,6 +54,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
+          }
+        ],
+        exclude: path.resolve(__dirname, 'src/index.html')
       }
     ]
   },
@@ -62,8 +74,14 @@ module.exports = {
       filename: 'main.css'
     }),
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: 'src/index.html'
     }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'users.html',
+    //   template: 'src/users.html',
+    //   chunks: []
+    // }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['dist/*']
     })
