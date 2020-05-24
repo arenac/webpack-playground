@@ -2,18 +2,18 @@ import '../css/main.scss';
 import '../users.html'
 
 import { RandomGenerator } from './random-generator';
-const outputParagraph = document.querySelector('#outputParagraph');
+const outputParagraph = $('#outputParagraph');
 
 const outputRandomInt = () => {
-    outputParagraph.textContent = RandomGenerator.randomInteger();
+    outputParagraph.text(RandomGenerator.randomInteger());
 };
 
 const outputRandomRange = () => {
-    outputParagraph.textContent = RandomGenerator.randomRange(1, 500);
+    outputParagraph.text(RandomGenerator.randomRange(1, 500));
 };
 
-const buttomRndInt = document.querySelector('#randomInt');
+const buttomRndInt = jQuery('#randomInt');
 const buttomRndRange = document.querySelector('#randomRange');
 
-buttomRndInt.addEventListener('click', outputRandomInt);
+buttomRndInt.click(outputRandomInt);
 buttomRndRange.addEventListener('click', outputRandomRange);
